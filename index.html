@@ -1,536 +1,537 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-    <style>
-/* /* --- Brand Colors & Setup (Pure SmartphoneShop Style) --- */
-:root {
-    --brand-blue: #3266a9;      /* Primary Deep Blue */
-    --brand-green: #2e9752;     /* Bright Success Green */
-    --light-cyan: #feffff;      /* Light Background */
-    --charcoal: #1E293B;        /* Pure Slate Charcoal */
-    --light-gray: #F1F5F9;      /* Off-White Borders/Backgrounds */
-    --pure-white: #FFFFFF;
-    --border-radius: 6px;
-    --transition: all 0.25s ease-in-out;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: var(--light-cyan);
-    color: var(--charcoal);
-    line-height: 1.6;
-}
-
-/* --- Announcement Bar --- */
-.announcement-bar {
-    background-color: var(--charcoal);
-    color: var(--pure-white);
-    text-align: center;
-    padding: 8px 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-}
-
-/* --- Clean Navigation Header --- */
-.main-header {
-    background-color: var(--pure-white);
-    border-bottom: 1px solid var(--light-gray);
-    padding: 15px 6%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo {
-    color: var(--brand-blue);
-    font-weight: 800;
-    font-size: 1.3rem;
-    letter-spacing: -0.5px;
-}
-
-.logo .accent-text {
-    color: var(--brand-green);
-}
-
-.nav-links a {
-    color: var(--charcoal);
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: var(--transition);
-}
-
-.nav-links a:hover {
-    color: var(--brand-blue);
-}
-
-.header-cta {
-    background-color: var(--brand-green);
-    color: var(--pure-white);
-    padding: 10px 20px;
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: var(--transition);
-}
-
-.header-cta:hover {
-    background-color: #247841;
-    transform: translateY(-1px);
-}
-
-/* --- Split Hero Layout --- */
-.hero {
-    background-color: var(--pure-white);
-    padding: 80px 6%;
-    border-bottom: 1px solid var(--light-gray);
-}
-
-.hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.hero-tagline {
-    color: var(--brand-blue);
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    display: block;
-    margin-bottom: 12px;
-}
-
-.hero-text-side h1 {
-    font-size: 2.8rem;
-    line-height: 1.2;
-    color: var(--charcoal);
-    margin-bottom: 20px;
-    font-weight: 800;
-}
-
-.hero-text-side p {
-    font-size: 1.1rem;
-    color: #64748B;
-    margin-bottom: 35px;
-    max-width: 540px;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-.btn {
-    padding: 14px 28px;
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: var(--transition);
-}
-
-.btn-primary {
-    background-color: var(--brand-blue);
-    color: var(--pure-white);
-}
-
-.btn-primary:hover {
-    background-color: #26518a;
-}
-
-.btn-secondary {
-    background-color: var(--light-gray);
-    color: var(--charcoal);
-}
-
-.btn-secondary:hover {
-    background-color: #E2E8F0;
-}
-
-.hero-image-side {
-    background-color: var(--light-gray);
-    border-radius: var(--border-radius);
-    height: 380px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    border: 1px solid #E2E8F0;
-    background-image: radial-gradient(var(--brand-blue) 0.5px, transparent 0.5px), radial-gradient(var(--brand-blue) 0.5px, #F8FAFC 0.5px);
-    background-size: 20px 20px;
-    background-position: 0 0, 10px 10px;
-}
-
-.hero-mockup-badge {
-    background-color: var(--pure-white);
-    padding: 12px 20px;
-    border-radius: 50px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    font-weight: 600;
-    font-size: 0.85rem;
-    color: var(--brand-blue);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-/* --- Section Formatting --- */
-.collections-section, .repairs-section, .portfolio-section, .terms-section {
-    padding: 100px 6%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.section-header h2 {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--charcoal);
-    margin-bottom: 10px;
-}
-
-.section-header p {
-    color: #64748B;
-    font-size: 1.05rem;
-}
-
-/* --- Collections Cards (Flat Minimalist Grid) --- */
-.collections-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.collection-card {
-    background-color: var(--pure-white);
-    border: 1px solid var(--light-gray);
-    border-radius: var(--border-radius);
-    padding: 40px 30px;
-    text-align: center;
-    position: relative;
-    transition: var(--transition);
-}
-
-.collection-card:hover {
-    border-color: var(--brand-blue);
-    box-shadow: 0 10px 30px rgba(50, 102, 169, 0.05);
-    transform: translateY(-2px);
-}
-
-.badge {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
-}
-
-.new-badge {
-    background-color: var(--brand-blue);
-    color: var(--pure-white);
-}
-
-.sale-badge {
-    background-color: var(--brand-green);
-    color: var(--pure-white);
-}
-
-.card-icon-wrapper {
-    font-size: 2.5rem;
-    color: var(--brand-blue);
-    margin-bottom: 15px;
-}
-
-.collection-card h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: var(--charcoal);
-}
-
-.collection-card p {
-    color: #64748B;
-    font-size: 0.95rem;
-    margin-bottom: 25px;
-}
-
-.card-link {
-    color: var(--brand-blue);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.card-link:hover {
-    color: var(--brand-green);
-}
-
-/* --- Clean Modern Data Tables --- */
-.repairs-table-container {
-    background-color: var(--pure-white);
-    border: 1px solid var(--light-gray);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-}
-
-.repairs-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-}
-
-.repairs-table th {
-    background-color: var(--light-gray);
-    color: var(--charcoal);
-    font-weight: 700;
-    font-size: 0.9rem;
-    padding: 18px 24px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.repairs-table td {
-    padding: 20px 24px;
-    border-bottom: 1px solid var(--light-gray);
-    font-size: 0.95rem;
-}
-
-.table-service-name {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-weight: 700;
-    color: var(--brand-blue);
-}
-
-.table-service-name i {
-    font-size: 1.3rem;
-}
-
-.price-highlight {
-    font-weight: 800;
-    color: var(--brand-green);
-    font-size: 1.1rem;
-}
-
-.table-btn {
-    background-color: var(--charcoal);
-    color: var(--pure-white);
-    padding: 8px 16px;
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-.table-btn:hover {
-    background-color: var(--brand-blue);
-}
-
-/* --- Before/After Portfolio Grid --- */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 40px;
-}
-
-.portfolio-item h3 {
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin-top: 15px;
-}
-
-.before-after-container {
-    display: flex;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    position: relative;
-    border: 1px solid var(--light-gray);
-    height: 250px;
-}
-
-.state-label {
-    position: absolute;
-    bottom: 12px;
-    font-size: 0.7rem;
-    font-weight: 800;
-    padding: 3px 8px;
-    border-radius: 4px;
-    z-index: 10;
-}
-
-.before-tag {
-    left: 12px;
-    background-color: #EF4444;
-    color: var(--pure-white);
-}
-
-.after-tag {
-    right: 12px;
-    background-color: var(--brand-green);
-    color: var(--pure-white);
-}
-
-.portfolio-img-placeholder {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.b-img {
-    background-color: #F8FAFC;
-    border-right: 1px dashed var(--charcoal);
-}
-
-.a-img {
-    background-color: #ECFDF5;
-}
-
-/* --- Minimalist Terms Section --- */
-.terms-box {
-    background-color: var(--pure-white);
-    border: 1px solid var(--light-gray);
-    padding: 50px;
-    border-radius: var(--border-radius);
-    text-align: center;
-}
-
-.terms-box h2 {
-    font-size: 1.75rem;
-    font-weight: 800;
-    margin-bottom: 15px;
-}
-
-.terms-box p {
-    color: #64748B;
-    max-width: 600px;
-    margin: 0 auto 30px auto;
-}
-
-.terms-box ul {
-    list-style: none;
-    max-width: 500px;
-    margin: 0 auto 40px auto;
-    text-align: left;
-}
-
-.terms-box li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-    font-size: 0.95rem;
-    color: var(--charcoal);
-}
-
-.terms-box li i {
-    color: var(--brand-green);
-    font-size: 1.15rem;
-}
-
-.btn-outline {
-    border: 1px solid var(--brand-blue);
-    color: var(--brand-blue);
-}
-
-.btn-outline:hover {
-    background-color: var(--brand-blue);
-    color: var(--pure-white);
-}
-
-/* --- Clean Footer --- */
-.main-footer {
-    background-color: var(--pure-white);
-    border-top: 1px solid var(--light-gray);
-    padding: 40px 6%;
-}
-
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    font-size: 0.85rem;
-    color: #64748B;
-}
-
-.managed-by {
-    font-weight: 600;
-    color: var(--brand-blue);
-}
-
-/* --- Mobile Responsiveness --- */
-@media (max-width: 768px) {
-    .main-header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
-    }
-    
-    .hero-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .hero-text-side p {
-        margin: 0 auto 30px auto;
-    }
-    
-    .hero-buttons {
-        justify-content: center;
-    }
-    
-    .hero-image-side {
-        height: 250px;
-    }
-    
-    .repairs-table th:nth-child(2),
-    .repairs-table td:nth-child(2) {
-        display: none; /* Hide description columns on mobile */
-    }
-} */
-</style>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cellphone Paradise | Premium Device Repairs & Sales</title>
     <!-- Boxicons for clean modern shop icons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <style>
+        /* --- Cellphone Paradise Brand Colors --- */
+        :root {
+            --brand-blue: #3266a9;      /* Primary Deep Blue */
+            --brand-green: #2e9752;     /* Bright Success Green */
+            --light-cyan: #feffff;      /* Light Background */
+            --charcoal: #1E293B;        /* Pure Slate Charcoal */
+            --light-gray: #F1F5F9;      /* Off-White Borders/Backgrounds */
+            --pure-white: #FFFFFF;
+            --border-radius: 6px;
+            --transition: all 0.25s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-cyan);
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+
+        /* --- Announcement Bar --- */
+        .announcement-bar {
+            background-color: var(--charcoal);
+            color: var(--pure-white);
+            text-align: center;
+            padding: 8px 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- Clean Navigation Header --- */
+        .main-header {
+            background-color: var(--pure-white);
+            border-bottom: 1px solid var(--light-gray);
+            padding: 15px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: var(--brand-blue);
+            font-weight: 800;
+            font-size: 1.3rem;
+            letter-spacing: -0.5px;
+        }
+
+        .logo .accent-text {
+            color: var(--brand-green);
+        }
+
+        .nav-links a {
+            color: var(--charcoal);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--brand-blue);
+        }
+
+        .header-cta {
+            background-color: var(--brand-blue);
+            color: var(--pure-white);
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .header-cta:hover {
+            background-color: var(--brand-green);
+            transform: translateY(-1px);
+        }
+
+        /* --- Split Hero Layout --- */
+        .hero {
+            background-color: var(--pure-white);
+            padding: 80px 6%;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-tagline {
+            color: var(--brand-blue);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .hero-text-side h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            color: var(--charcoal);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero-text-side p {
+            font-size: 1.1rem;
+            color: #64748B;
+            margin-bottom: 35px;
+            max-width: 540px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--brand-blue);
+            color: var(--pure-white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--brand-green);
+        }
+
+        .btn-secondary {
+            background-color: var(--light-gray);
+            color: var(--charcoal);
+        }
+
+        .btn-secondary:hover {
+            background-color: #E2E8F0;
+        }
+
+        .hero-image-side {
+            background-color: var(--light-gray);
+            border-radius: var(--border-radius);
+            height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 1px solid #E2E8F0;
+            background-image: radial-gradient(var(--brand-blue) 0.5px, transparent 0.5px), radial-gradient(var(--brand-blue) 0.5px, #F8FAFC 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+
+        .hero-mockup-badge {
+            background-color: var(--pure-white);
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--brand-blue);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- Section Formatting --- */
+        .collections-section, .repairs-section, .portfolio-section, .terms-section {
+            padding: 100px 6%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--charcoal);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: #64748B;
+            font-size: 1.05rem;
+        }
+
+        /* --- Collections Cards --- */
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .collection-card {
+            background-color: var(--pure-white);
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .collection-card:hover {
+            border-color: var(--brand-blue);
+            box-shadow: 0 10px 30px rgba(50, 102, 169, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .new-badge {
+            background-color: var(--brand-blue);
+            color: var(--pure-white);
+        }
+
+        .sale-badge {
+            background-color: var(--brand-green);
+            color: var(--pure-white);
+        }
+
+        .card-icon-wrapper {
+            font-size: 2.5rem;
+            color: var(--brand-blue);
+            margin-bottom: 15px;
+        }
+
+        .collection-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--charcoal);
+        }
+
+        .collection-card p {
+            color: #64748B;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .card-link {
+            color: var(--brand-blue);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-link:hover {
+            color: var(--brand-green);
+        }
+
+        /* --- Clean Modern Data Tables --- */
+        .repairs-table-container {
+            background-color: var(--pure-white);
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .repairs-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .repairs-table th {
+            background-color: var(--light-gray);
+            color: var(--charcoal);
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 18px 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .repairs-table td {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 0.95rem;
+        }
+
+        .table-service-name {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            color: var(--brand-blue);
+        }
+
+        .table-service-name i {
+            font-size: 1.3rem;
+        }
+
+        .price-highlight {
+            font-weight: 800;
+            color: var(--brand-green);
+            font-size: 1.1rem;
+        }
+
+        .table-btn {
+            background-color: var(--charcoal);
+            color: var(--pure-white);
+            padding: 8px 16px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .table-btn:hover {
+            background-color: var(--brand-blue);
+        }
+
+        /* --- Before/After Portfolio --- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+        }
+
+        .portfolio-item h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        .before-after-container {
+            display: flex;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--light-gray);
+            height: 250px;
+        }
+
+        .state-label {
+            position: absolute;
+            bottom: 12px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 4px;
+            z-index: 10;
+        }
+
+        .before-tag {
+            left: 12px;
+            background-color: #EF4444;
+            color: var(--pure-white);
+        }
+
+        .after-tag {
+            right: 12px;
+            background-color: var(--brand-green);
+            color: var(--pure-white);
+        }
+
+        .portfolio-img-placeholder {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .b-img {
+            background-color: #F8FAFC;
+            border-right: 1px dashed var(--charcoal);
+        }
+
+        .a-img {
+            background-color: #ECFDF5;
+        }
+
+        /* --- Minimalist Terms Section --- */
+        .terms-box {
+            background-color: var(--pure-white);
+            border: 1px solid var(--light-gray);
+            padding: 50px;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .terms-box h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .terms-box p {
+            color: #64748B;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .terms-box ul {
+            list-style: none;
+            max-width: 500px;
+            margin: 0 auto 40px auto;
+            text-align: left;
+        }
+
+        .terms-box li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: var(--charcoal);
+        }
+
+        .terms-box li i {
+            color: var(--brand-green);
+            font-size: 1.15rem;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--brand-blue);
+            color: var(--brand-blue);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--brand-blue);
+            color: var(--pure-white);
+        }
+
+        /* --- Clean Footer --- */
+        .main-footer {
+            background-color: var(--pure-white);
+            border-top: 1px solid var(--light-gray);
+            padding: 40px 6%;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: 0.85rem;
+            color: #64748B;
+        }
+
+        .managed-by {
+            font-weight: 600;
+            color: var(--brand-blue);
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .main-header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-text-side p {
+                margin: 0 auto 30px auto;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .hero-image-side {
+                height: 250px;
+            }
+            
+            .repairs-table th:nth-child(2),
+            .repairs-table td:nth-child(2) {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
 
