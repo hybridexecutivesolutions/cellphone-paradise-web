@@ -409,24 +409,6 @@
             color: var(--pure-white);
         }
 
-        .portfolio-img-placeholder {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .b-img {
-            background-color: #F8FAFC;
-            border-right: 1px dashed var(--charcoal);
-        }
-
-        .a-img {
-            background-color: #ECFDF5;
-        }
-
         /* --- Minimalist Terms Section --- */
         .terms-box {
             background-color: var(--pure-white);
@@ -529,6 +511,10 @@
             .repairs-table th:nth-child(2),
             .repairs-table td:nth-child(2) {
                 display: none;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -673,32 +659,26 @@
             <p>A transparent look at real repairs completed by our engineering team.</p>
         </div>
         <div class="portfolio-grid">
+            <!-- Smartphone Portfolio Item -->
             <div class="portfolio-item">
                 <div class="before-after-container">
                     <div class="state-label before-tag">BEFORE</div>
                     <div class="state-label after-tag">AFTER</div>
-                    <div class="portfolio-img-placeholder b-img">
-                        <span>Shattered Back-plate</span>
-                    </div>
-                    <div class="portfolio-img-placeholder a-img">
-                        <span>Flawless Back-plate Replacement</span>
-                    </div>
+                    <img src="beforeiphone1.jpeg" alt="Shattered iPhone Screen" style="width: 50%; height: 100%; object-fit: cover; border-right: 1px dashed var(--charcoal);">
+                    <img src="afteriphone2.jpeg" alt="Flawless Repaired Screen" style="width: 50%; height: 100%; object-fit: cover;">
                 </div>
-                <h3>iPhone 12 Pro Screen Restoration</h3>
+                <h3>Smartphone Display Restoration</h3>
             </div>
 
+            <!-- Laptop Portfolio Item -->
             <div class="portfolio-item">
                 <div class="before-after-container">
                     <div class="state-label before-tag">BEFORE</div>
                     <div class="state-label after-tag">AFTER</div>
-                    <div class="portfolio-img-placeholder b-img">
-                        <span>Screen Damage</span>
-                    </div>
-                    <div class="after.jpg.jpeg">
-                        <span>Clean Diagnostic</span>
-                    </div>
+                    <img src="beforecomp1.png" alt="Damaged Laptop Display" style="width: 50%; height: 100%; object-fit: cover; border-right: 1px dashed var(--charcoal);">
+                    <img src="aftercomp1.jpeg" alt="Repaired Laptop Display" style="width: 50%; height: 100%; object-fit: cover;">
                 </div>
-                <h3>Connex Swift Book Pro Screen Rescue</h3>
+                <h3>Laptop Hardware & Panel Rescue</h3>
             </div>
         </div>
     </section>
@@ -713,7 +693,7 @@
                 <li><i class='bx bx-check-circle'></i> Standard diagnostics are run before any physical repairs begin.</li>
                 <li><i class='bx bx-check-circle'></i> Quote values are locked in once signed and will never contain hidden charges.</li>
             </ul>
-            <a href="https://drive.google.com/file/d/1oA21lT7iqEtGAL1dtHrGv4ytNdAb7qlS/view?usp=drive_link" class="btn btn-outline">Read Full Terms Document</a>
+            <a href="https://drive.google.com/file/d/1oA21lT7iqEtGAL1dtHrGv4ytNdAb7qlS/view?usp=drive_link" target="_blank" class="btn btn-outline">Read Full Terms Document</a>
         </div>
     </section>
 
