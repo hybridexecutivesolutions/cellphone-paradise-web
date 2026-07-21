@@ -154,6 +154,7 @@
             font-weight: 600;
             font-size: 0.95rem;
             transition: var(--transition);
+            display: inline-block;
         }
 
         .btn-primary {
@@ -189,7 +190,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: top center; /* Keeps top of the image visible */
+            object-position: top center;
             display: block;
         }
 
@@ -377,7 +378,7 @@
         /* --- Before/After Portfolio --- */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
 
@@ -418,13 +419,15 @@
             color: var(--pure-white);
         }
 
-        /* --- Minimalist Terms Section --- */
+        /* --- Terms Section Refined for Mobile --- */
         .terms-box {
             background-color: var(--pure-white);
             border: 1px solid var(--light-gray);
-            padding: 50px;
+            padding: 50px 30px;
             border-radius: var(--border-radius);
             text-align: center;
+            width: 100%;
+            word-break: break-word;
         }
 
         .terms-box h2 {
@@ -448,7 +451,7 @@
 
         .terms-box li {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 10px;
             margin-bottom: 12px;
             font-size: 0.95rem;
@@ -458,11 +461,15 @@
         .terms-box li i {
             color: var(--brand-green);
             font-size: 1.15rem;
+            margin-top: 2px;
+            flex-shrink: 0;
         }
 
         .btn-outline {
             border: 1px solid var(--brand-blue);
             color: var(--brand-blue);
+            max-width: 100%;
+            white-space: normal;
         }
 
         .btn-outline:hover {
@@ -499,6 +506,10 @@
                 gap: 15px;
                 padding: 20px;
             }
+
+            .collections-section, .repairs-section, .portfolio-section, .terms-section {
+                padding: 60px 5%;
+            }
             
             .hero-container {
                 grid-template-columns: 1fr;
@@ -524,6 +535,21 @@
 
             .portfolio-grid {
                 grid-template-columns: 1fr;
+            }
+
+            /* Prevent Terms Box splitting or clipping on small screens */
+            .terms-box {
+                padding: 30px 15px;
+            }
+
+            .terms-box h2 {
+                font-size: 1.4rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
             }
         }
     </style>
