@@ -178,27 +178,33 @@
             background-color: var(--light-gray);
             border-radius: var(--border-radius);
             height: 380px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             position: relative;
             border: 1px solid #E2E8F0;
-            background-image: radial-gradient(var(--brand-blue) 0.5px, transparent 0.5px), radial-gradient(var(--brand-blue) 0.5px, #F8FAFC 0.5px);
-            background-size: 20px 20px;
-            background-position: 0 0, 10px 10px;
+            overflow: hidden;
+        }
+
+        .hero-cover-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .hero-mockup-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
             background-color: var(--pure-white);
             padding: 12px 20px;
             border-radius: 50px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
             font-weight: 600;
             font-size: 0.85rem;
             color: var(--brand-blue);
             display: flex;
             align-items: center;
             gap: 8px;
+            z-index: 10;
         }
 
         /* --- Section Formatting --- */
@@ -553,7 +559,8 @@
                     <a href="#repairs" class="btn btn-secondary">Book a Repair</a>
                 </div>
             </div>
-            <div class="cellphoneparadisecover.jpeg">
+            <div class="hero-image-side">
+                <img src="cellphoneparadisecover.jpeg" alt="Cellphone Paradise Cover" class="hero-cover-img">
                 <div class="hero-mockup-badge">
                     <i class='bx bx-check-shield'></i> 100% Quality Guaranteed
                 </div>
